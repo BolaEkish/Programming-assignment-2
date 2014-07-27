@@ -63,7 +63,7 @@ cacheSolve <- function(x, ...)
         
         x$set_Inverse(i)
         
-        #Return the matrix
+        #Return the inverse of the matrix
         i
         
 }
