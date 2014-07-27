@@ -6,29 +6,34 @@
 
 makeCacheMatrix  <- function(x = matrix()) {
         
-        #initialize i to NULL
+        #initialize inverse property 'i' to NULL
         i <- NULL
         
+        #This is to set the matrix
         set <- function(y) {
                 x <<- y
                 i <<- NULL
         }
         
+        #This is to get the contents of the matrix
         get <- function()
         {
                 x
         }
         
+        #This Method sets the inverse of the matrix
         set_Inverse <- function(inverse)
         {
                 i <<- inverse
         }
         
+        #This method gets the inverse of the matrix
         get_Inverse <- function()
         {
                 i
         }
         
+        #Return a list of the methods
         list(set = set, get = get,
              set_Inverse = set_Inverse,
              get_Inverse = get_Inverse)
@@ -53,6 +58,7 @@ cacheSolve <- function(x, ...)
         
         data <- x$get()
         
+        #Compute the inverse of the matrix using the solve() function
         i <- solve(data) %*% data
         
         x$set_Inverse(i)
